@@ -1,4 +1,5 @@
-# KhmerFivemQBCoreCustom
+# KhmerFivemQBCoreCustom 
+<h1>Continuous update</h1>
 Customized for Khmer
 ធ្វើការកែប្រែសម្រាប់ប្រើជាសាធារណៈ Open for public.
 <br>
