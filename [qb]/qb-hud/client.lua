@@ -323,9 +323,7 @@ RegisterNetEvent("hud:client:LoadMap", function()
     end
     if Menu.isToggleMapShapeChecked == "square" then
         RequestStreamedTextureDict("squaremap", false)
-        if not HasStreamedTextureDictLoaded("squaremap") then
-            Wait(150)
-        end
+        while not HasStreamedTextureDictLoaded("squaremap") do Wait(150) end
         if Menu.isMapNotifChecked then
             QBCore.Functions.Notify(Lang:t("notify.load_square_map"))
         end
@@ -360,9 +358,7 @@ RegisterNetEvent("hud:client:LoadMap", function()
         end
     elseif Menu.isToggleMapShapeChecked == "circle" then
         RequestStreamedTextureDict("circlemap", false)
-        if not HasStreamedTextureDictLoaded("circlemap") then
-            Wait(150)
-        end
+        while not HasStreamedTextureDictLoaded("circlemap") do Wait(150) end
         if Menu.isMapNotifChecked then
             QBCore.Functions.Notify(Lang:t("notify.load_circle_map"))
         end
@@ -669,6 +665,10 @@ CreateThread(function()
                 else
                     armed = false
                 end
+            end
+            if GetEntityMaxHealth(player) ~= 200 then
+                SetEntityMaxHealth(player, 200)
+                SetEntityHealth(player, 200)
             end
             playerDead = IsEntityDead(player) or PlayerData.metadata["inlaststand"] or PlayerData.metadata["isdead"] or false
             parachute = GetPedParachuteState(player)
