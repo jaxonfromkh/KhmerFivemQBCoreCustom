@@ -221,13 +221,13 @@ AddEventHandler('__cfx_internal:commandFallback', function(command)
 end)
 
 -- player join messages
-AddEventHandler('playerJoining', function()
-    if GetConvarInt('chat_showJoins', 1) == 0 then
-        return
-    end
+-- AddEventHandler('playerJoining', function()
+--     if GetConvarInt('chat_showJoins', 1) == 0 then
+--         return
+--     end
 
-    TriggerClientEvent('chatMessage', -1, '', { 255, 255, 255 }, '^2* ' .. GetPlayerName(source) .. ' joined.')
-end)
+--     TriggerClientEvent('chatMessage', -1, '', { 255, 255, 255 }, '^2* ' .. GetPlayerName(source) .. ' joined.')
+-- end)
 
 AddEventHandler('playerDropped', function(reason)
     if GetConvarInt('chat_showQuits', 1) == 0 then

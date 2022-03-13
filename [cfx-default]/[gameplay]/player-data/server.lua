@@ -129,20 +129,20 @@ AddEventHandler('playerConnecting', function()
     setupPlayer(playerIdx)
 end)
 
--- and migrate them to a 'joining' ID where possible
-RegisterNetEvent('playerJoining')
+-- -- and migrate them to a 'joining' ID where possible
+-- RegisterNetEvent('playerJoining')
 
-AddEventHandler('playerJoining', function(oldIdx)
-    -- resource restart race condition
-    local oldPlayer = players[tostring(oldIdx)]
+-- AddEventHandler('playerJoining', function(oldIdx)
+--     -- resource restart race condition
+--     local oldPlayer = players[tostring(oldIdx)]
 
-    if oldPlayer then
-        players[tostring(source)] = oldPlayer
-        players[tostring(oldIdx)] = nil
-    else
-        setupPlayer(tostring(source))
-    end
-end)
+--     if oldPlayer then
+--         players[tostring(source)] = oldPlayer
+--         players[tostring(oldIdx)] = nil
+--     else
+--         setupPlayer(tostring(source))
+--     end
+-- end)
 
 -- remove them if they're dropped
 AddEventHandler('playerDropped', function()
