@@ -1617,3 +1617,17 @@ QBCore.Functions.CreateUseableItem("id_card", function(source, item)
 		end
 	end
 end)
+QBCore.Functions.CreateCallback("qb-storerobbery:server:getSecureInfo", function(source, cb, key)
+    local result = MySQL.Sync.fetchScalar('SELECT already_secured FROM secure_system WHERE source = ?', {key})
+    print(json.encode(result))
+        if result ~= nil then
+            cb(result)
+        else
+            cb(nil)
+        end
+end)
+
+RegisterNetEvent('qb-storerobbery:server:updateSecureInfo', function(status, key)
+	local result = MySQL.Async.execute('UPDATE secure_system SET already_secured = ? WHERE source = ?',{status, key})
+    print(json.encode(result))
+end)

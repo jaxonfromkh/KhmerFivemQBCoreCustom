@@ -154,3 +154,4 @@ end)
 QBCore.Functions.CreateCallback('qb-storerobbery:server:getSafeStatus', function(source, cb)
     cb(Config.Safes)
 end)
+

@@ -1,0 +1,70 @@
+-- --------------------------------------------------------
+-- Host:                         127.0.0.1
+-- Server version:               10.4.17-MariaDB - mariadb.org binary distribution
+-- Server OS:                    Win64
+-- HeidiSQL Version:             11.3.0.6295
+-- --------------------------------------------------------
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET NAMES utf8 */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+
+-- Dumping database structure for qbcoreframework_1edeca
+CREATE DATABASE IF NOT EXISTS `qbcoreframework_1edeca` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `qbcoreframework_1edeca`;
+
+-- Dumping structure for table qbcoreframework_1edeca.secure_system
+CREATE TABLE IF NOT EXISTS `secure_system` (
+  `key` int(11) NOT NULL AUTO_INCREMENT,
+  `source` varchar(50) NOT NULL,
+  `already_secured` int(11) NOT NULL DEFAULT 0,
+  `secured_by` varchar(50) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`key`)
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8;
+
+-- Dumping data for table qbcoreframework_1edeca.secure_system: ~0 rows (approximately)
+/*!40000 ALTER TABLE `secure_system` DISABLE KEYS */;
+INSERT INTO `secure_system` (`key`, `source`, `already_secured`, `secured_by`) VALUES
+	(1, 'hi', 1, '0'),
+	(2, 'store1', 0, '0'),
+	(3, 'store2', 0, '0'),
+	(4, 'store3', 0, '0'),
+	(5, 'store4', 0, '0'),
+	(6, 'store5', 0, '0'),
+	(7, 'store6', 0, '0'),
+	(8, 'store7', 0, '0'),
+	(9, 'store8', 0, '0'),
+	(10, 'store9', 0, '0'),
+	(11, 'store10', 0, '0'),
+	(12, 'store11', 0, '0'),
+	(13, 'store12', 0, '0'),
+	(14, 'store13', 0, '0'),
+	(15, 'store14', 0, '0'),
+	(16, 'store15', 0, '0'),
+	(17, 'store16', 0, '0'),
+	(18, 'store17', 0, '0'),
+	(19, 'store18', 0, '0'),
+	(20, 'store19', 0, '0'),
+	(21, 'store20', 0, '0'),
+	(22, 'store21', 0, '0'),
+	(23, 'store22', 0, '0'),
+	(24, 'store23', 0, '0'),
+	(25, 'store24', 0, '0'),
+	(26, 'store25', 0, '0'),
+	(27, 'store26', 0, '0'),
+	(28, 'store27', 0, '0'),
+	(29, 'store28', 0, '0'),
+	(30, 'store29', 0, '0'),
+	(31, 'store30', 0, '0'),
+	(32, 'store31', 0, '0'),
+	(33, 'store32', 0, '0');
+/*!40000 ALTER TABLE `secure_system` ENABLE KEYS */;
+
+/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
+/*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40111 SET SQL_NOTES=IFNULL(@OLD_SQL_NOTES, 1) */;

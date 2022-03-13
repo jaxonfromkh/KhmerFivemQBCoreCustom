@@ -135,45 +135,53 @@ RegisterNetEvent('lockpicks:UseLockpick', function(isAdvanced)
         local dist = #(pos - Config.Registers[k][1].xyz)
         if dist <= 1 and not Config.Registers[k].robbed then
             if CurrentCops >= Config.MinimumStoreRobberyPolice then
+                -- start check secure here
+                print(k)
                 -- print(usingAdvanced)
-                if usingAdvanced then
-                    lockpick(true)
-                    currentRegister = k
-                    if not IsWearingHandshoes() then
-                        TriggerServerEvent("evidence:server:CreateFingerDrop", pos)
-                    end
-                    if not copsCalled then
-			local s1, s2 = GetStreetNameAtCoord(pos.x, pos.y, pos.z)
-                        local street1 = GetStreetNameFromHashKey(s1)
-                        local street2 = GetStreetNameFromHashKey(s2)
-                        local streetLabel = street1
-                        if street2 ~= nil then
-                            streetLabel = streetLabel .. " " .. street2
+                QBCore.Functions.TriggerCallback('qb-storerobbery:server:getSecureInfo', function(info)
+                    if info == 0 then
+                        if usingAdvanced then
+                            lockpick(true)
+                            currentRegister = k
+                            if not IsWearingHandshoes() then
+                                TriggerServerEvent("evidence:server:CreateFingerDrop", pos)
+                            end
+                            if not copsCalled then
+                        local s1, s2 = GetStreetNameAtCoord(pos.x, pos.y, pos.z)
+                                local street1 = GetStreetNameFromHashKey(s1)
+                                local street2 = GetStreetNameFromHashKey(s2)
+                                local streetLabel = street1
+                                if street2 ~= nil then
+                                    streetLabel = streetLabel .. " " .. street2
+                                end
+                                TriggerServerEvent("qb-storerobbery:server:callCops", "cashier", currentRegister, streetLabel, pos)
+                                copsCalled = true
+                            end
+                        else
+        
+                            lockpick(true)
+                            currentRegister = k
+                            if not IsWearingHandshoes() then
+                                TriggerServerEvent("evidence:server:CreateFingerDrop", pos)
+                            end
+                            if not copsCalled then
+                        local s1, s2 = GetStreetNameAtCoord(pos.x, pos.y, pos.z)
+                                local street1 = GetStreetNameFromHashKey(s1)
+                                local street2 = GetStreetNameFromHashKey(s2)
+                                local streetLabel = street1
+                                if street2 ~= nil then
+                                    streetLabel = streetLabel .. " " .. street2
+                                end
+                                TriggerServerEvent("qb-storerobbery:server:callCops", "cashier", currentRegister, streetLabel, pos)
+                                copsCalled = true
+                            end
+        
                         end
-                        TriggerServerEvent("qb-storerobbery:server:callCops", "cashier", currentRegister, streetLabel, pos)
-                        copsCalled = true
-                    end
-                else
-
-                    lockpick(true)
-                    currentRegister = k
-                    if not IsWearingHandshoes() then
-                        TriggerServerEvent("evidence:server:CreateFingerDrop", pos)
-                    end
-                    if not copsCalled then
-			local s1, s2 = GetStreetNameAtCoord(pos.x, pos.y, pos.z)
-                        local street1 = GetStreetNameFromHashKey(s1)
-                        local street2 = GetStreetNameFromHashKey(s2)
-                        local streetLabel = street1
-                        if street2 ~= nil then
-                            streetLabel = streetLabel .. " " .. street2
-                        end
-                        TriggerServerEvent("qb-storerobbery:server:callCops", "cashier", currentRegister, streetLabel, pos)
-                        copsCalled = true
-                    end
-
-                end
-
+                    else
+                        QBCore.Functions.Notify("Store "..k.." is unsecured", "error")
+                    end 
+                end,'store'..k)
+            -- end check secure here
             else
                 QBCore.Functions.Notify("Not Enough Police (2 Required)", "error")
             end
@@ -213,6 +221,34 @@ function setupSafes()
         end
     end)
 end
+
+function getSecureSystem(storeID)
+    QBCore.Functions.TriggerCallback('qb-storerobbery:server:getSecureInfo', function(info)
+        print('Here is secure result')
+        print(info)
+    end,storeID)
+end
+
+function updateSecureSystem(status,storeID)
+    TriggerServerEvent('qb-storerobbery:server:updateSecureInfo',status,storeID)
+end
+
+-- RegisterCommand("updateSecure", function(source, args, rawCommand)
+--     updateSecureSystem(1,'hi')
+
+--  end, false --[[this command is not restricted, everyone can use this.]])
+ RegisterCommand("martsecure", function(source, args, rawCommand)
+    if args[1] and PlayerJob.name=='police' then
+        updateSecureSystem(0,args[1])
+    else
+        QBCore.Functions.Notify("Your job ["..PlayerJob.name.."] is unauthorized!", "error")
+    end
+ end, false --[[this command is not restricted, everyone can use this.]])
+
+-- RegisterCommand("secure", function(source, args, rawCommand)
+--     print(json.encode(PlayerJob))
+--    getSecureSystem('store7')
+-- end, false --[[this command is not restricted, everyone can use this.]])
 
 DrawText3Ds = function(coords, text)
 	SetTextScale(0.35, 0.35)
@@ -263,6 +299,8 @@ RegisterNUICallback('success', function()
     if currentRegister ~= 0 then
         lockpick(false)
         TriggerServerEvent('qb-storerobbery:server:setRegisterStatus', currentRegister)
+        updateSecureSystem(1,'store'..currentRegister)
+        print(currentRegister)
         local lockpickTime = 25000
         LockpickDoorAnim(lockpickTime)
         QBCore.Functions.Progressbar("search_register", "Emptying The Register..", lockpickTime, false, true, {
