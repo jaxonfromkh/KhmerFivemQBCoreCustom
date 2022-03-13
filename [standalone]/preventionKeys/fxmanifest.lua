@@ -2,11 +2,11 @@
 fx_version 'adamant'
 games { 'gta5' }
 
-ui_page 'html/index.html'
+-- ui_page 'html/index.html'
 
 -- Client Scripts
 client_script 'client/main.lua'
 
 -- Server Scripts
-server_script 'server/main.lua'
+-- server_script 'server/main.lua'
 
