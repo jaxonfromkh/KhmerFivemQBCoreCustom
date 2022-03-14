@@ -1,6 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Kdam Thmor:wght@100&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor&display=swap');
+body{
+    font-family: 'Kdam Thmor', cursive;
+}
 .container {
     display: none;
+    
 }
 
 .main-screen {
@@ -15,7 +20,7 @@
     text-align: center;
     color: #ededed;
     line-height: 24px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Kdam Thmor', sans-serif;
 }
 
 .characters-list {
@@ -44,9 +49,9 @@
 .character-list-header>p {
     text-align: center;
     font-size: 2vh;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Kdam Thmor', sans-serif;
     letter-spacing: .1vh;
-    font-weight: 900;
+    /* font-weight: 900; */
     color: #000000;
     height: 30px;
     padding-top: 13px;
@@ -57,7 +62,7 @@
     width: 100%;
     height: 75px;
     margin-top: 15px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Kdam Thmor', sans-serif;
     border-bottom: 4px solid #74aa3200;
     transition: .1s linear;
     border-radius: .3vh;
@@ -66,10 +71,10 @@
 
 .character>span {
     color: #ededed;
-    font-weight: 900;
+    /* font-weight: 900; */
     text-transform: uppercase;
     letter-spacing: .1vh;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Kdam Thmor', sans-serif;
 }
 
 #cid {
@@ -95,7 +100,7 @@
     font-size: 17px;
     line-height: 80px;
     left: 20px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Kdam Thmor', sans-serif;
 }
 
 .character-btn {
@@ -114,7 +119,7 @@
     color: #ededed;
     letter-spacing: .1vh;
     text-align: center;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Kdam Thmor', sans-serif;
     font-size: 2vh;
     text-transform: uppercase;
     line-height: 5vh;
@@ -171,16 +176,19 @@
     color: #ededed;
     left: -5vh;
     letter-spacing: .1vh;
-    font-weight: 900;
+    /* font-weight: 900; */
     overflow: visible !important;
+    font-family: 'Kdam Thmor', sans-serif;
+
 }
 
 #no-char {
-    position: absolute;
+    /* position: absolute; */
     color: #ededed;
     font-size: 16px;
     top: 30%;
     text-align: center;
+    font-family: 'Kdam Thmor', sans-serif;
 }
 
 .char-info-titel {
@@ -202,7 +210,7 @@
     font-size: 1.5vh;
     width: 100%;
     height: 2.9vh;
-    font-weight: 900;
+    /* font-weight: 900; */
     text-transform: uppercase;
     margin-bottom: 12px;
 }
@@ -210,10 +218,20 @@
 .char-info-js {
     position: absolute;
     left: 50%;
+    padding-top: 6px;
+    font-weight: 700;
 }
-
+#loading-text{
+    margin-left: 10px;
+    font-size: 18px;
+    line-height: 1.5;
+    font-family: 'Kdam Thmor', sans-serif;
+}
 #info-label {
     margin-left: 10px;
+    font-size: 18px;
+    line-height: 1.5;
+    font-family: 'Kdam Thmor', sans-serif;
 }
 
 .character-delete {
@@ -229,10 +247,10 @@
     background-color: rgb(23 23 23 / 80%);
     border-radius: .8vh;
     padding: 30px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Kdam Thmor', sans-serif;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     color: #ededed;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Kdam Thmor', sans-serif;
     overflow: visible !important;
 }
 
@@ -244,20 +262,21 @@
     text-align: left;
     font-size: 2vh;
     line-height: 29px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 900;
+    font-family: 'Kdam Thmor', sans-serif;
+    /* font-weight: 900; */
     text-transform: uppercase;
     overflow: visible !important;
 }
 
 .characters-delete-block-header>p {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Kdam Thmor', sans-serif;
     overflow: visible !important;
 }
 
 .character-delete>p {
     padding-top: 50px;
     font-size: 1.3vh;
+    font-family: 'Kdam Thmor', sans-serif;
     overflow: visible !important;
 }
 
@@ -297,9 +316,9 @@
     color: #ededed;
     text-align: center;
     padding-top: 1vh;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Kdam Thmor', sans-serif;
     overflow: visible !important;
-    font-weight: 900;
+    /* font-weight: 900; */
     text-transform: uppercase;
 }
 
@@ -307,9 +326,9 @@
     color: #ededed;
     text-align: center;
     padding-top: 1vh;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Kdam Thmor', sans-serif;
     overflow: visible !important;
-    font-weight: 900;
+    /* font-weight: 900; */
     text-transform: uppercase;
 }
 
@@ -325,7 +344,7 @@
     background-color: rgb(23 23 23 / 80%);
     border-radius: .8vh;
     padding: 30px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Kdam Thmor', sans-serif;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -340,7 +359,7 @@ i#close-reg {
     color: #ededed;
     background-color: #dc143c;
     font-size: 1.3vh;
-    font-weight: 900;
+    /* font-weight: 900; */
     border-radius: .3vh;
     padding: .3vh;
 }
@@ -353,7 +372,7 @@ i#close-reg {
     color: #ededed;
     text-align: left;
     font-size: 2vh;
-    font-weight: 900;
+    /* font-weight: 900; */
 }
 
 .char-register-inputs {
@@ -373,10 +392,10 @@ i#close-reg {
     height: 3vh;
     color: #ededed;
     max-width: 100%;
-    font-weight: 900;
+    /* font-weight: 900; */
     padding: 4px;
     border-radius: .3vh;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Kdam Thmor', sans-serif;
     text-align: center;
     transition: all 0.2s ease-in-out;
     cursor: text;
@@ -396,7 +415,7 @@ select {
     max-width: 100%;
     padding: 4px;
     border-radius: .3vh;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Kdam Thmor', sans-serif;
     text-align-last: center;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -458,7 +477,7 @@ input[type="date"]::-webkit-clear-button {
 #birthdate {
     color: #ededed;
     text-align: center;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Kdam Thmor', sans-serif;
 }
 
 .character-reg-btn {
@@ -479,9 +498,9 @@ input[type="date"]::-webkit-clear-button {
     line-height: 4vh;
     color: #ededed;
     text-transform: uppercase;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Kdam Thmor', sans-serif;
     font-size: 2vh;
-    font-weight: 900;
+    /* font-weight: 900; */
 }
 
 .loading-rondje {
@@ -500,7 +519,7 @@ input[type="date"]::-webkit-clear-button {
 .loading-rondje > p {
     color: white;
     margin-top: 1vh;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Kdam Thmor', sans-serif;
     text-shadow: 1px 1px 0px #00000085;
 }
 
