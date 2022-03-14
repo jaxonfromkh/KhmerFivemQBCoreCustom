@@ -261,9 +261,9 @@ body {
 }
 
 .item-slot-amount>p {
-	color: #ffffff;
-	text-align: right;
-	font-size: 0.8vh;
+	color: #fbff00;
+    text-align: right;
+    font-size: 1.67vh;
 }
 
 .item-slot-label {

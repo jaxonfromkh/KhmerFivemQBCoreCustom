@@ -802,7 +802,7 @@ RegisterNUICallback("GiveItem", function(data)
             QBCore.Functions.Notify("You do not own this item!", "error")
         end
     else
-        QBCore.Functions.Notify("No one nearby!", "error")
+        QBCore.Functions.Notify("គ្មានមនុស្សនៅជិត!", "error")
     end
 end)
 

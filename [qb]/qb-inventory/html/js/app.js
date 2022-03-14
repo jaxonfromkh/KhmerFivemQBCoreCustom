@@ -602,7 +602,7 @@ function handleDragDrop() {
                     $(this).find(".item-slot-amount p").html("0 (0.0)");
                     $(".ui-draggable-dragging")
                         .find(".item-slot-amount p")
-                        .html("(" + itemData.amount + ") $" + itemData.price);
+                        .html("(" + itemData.amount + ") " + "("+itemData.price+")៛");
                     $(".ui-draggable-dragging").find(".item-slot-key").remove();
                     if ($(this).parent().attr("data-inventory") == "hotbar") {
                     }
@@ -624,7 +624,7 @@ function handleDragDrop() {
                 if (itemData.price != null) {
                     $(this)
                         .find(".item-slot-amount p")
-                        .html("(" + itemData.amount + ") $" + itemData.price);
+                        .html("(" + itemData.amount + ") " + "("+itemData.price+")៛");
                     if ($(this).parent().attr("data-inventory") == "hotbar") {
                     }
                 } else {
@@ -644,10 +644,10 @@ function handleDragDrop() {
                 if (itemData.price != null) {
                     $(this)
                         .find(".item-slot-amount p")
-                        .html("(" + itemData.amount + ") $" + itemData.price);
+                        .html("(" + itemData.amount + ") " + "("+itemData.price+")៛");
                     $(".ui-draggable-dragging")
                         .find(".item-slot-amount p")
-                        .html("(" + itemData.amount + ") $" + itemData.price);
+                        .html("(" + itemData.amount + ") " + "("+itemData.price+")៛");
                     $(".ui-draggable-dragging").find(".item-slot-key").remove();
                     if ($(this).parent().attr("data-inventory") == "hotbar") {
                     }
@@ -814,8 +814,8 @@ function updateweights($fromSlot, $toSlot, $fromInv, $toInv, $toAmount) {
                     itemData.name +
                     '" /></div><div class="item-slot-amount"><p>(' +
                     itemData.amount +
-                    ") $" +
-                    itemData.price +
+                    ") " +
+                    "("+itemData.price+")៛)" +
                     '</p></div><div class="item-slot-label"><p>' +
                     itemData.label +
                     "</p></div>"
@@ -858,8 +858,8 @@ function updateweights($fromSlot, $toSlot, $fromInv, $toInv, $toAmount) {
                     itemData.name +
                     '" /></div><div class="item-slot-amount"><p>(' +
                     itemData.amount +
-                    ") $" +
-                    itemData.price +
+                    ") " +
+                    "("+itemData.price+")៛)"+
                     '</p></div><div class="item-slot-label"><p>' +
                     itemData.label +
                     "</p></div>"
@@ -901,8 +901,8 @@ function updateweights($fromSlot, $toSlot, $fromInv, $toInv, $toAmount) {
                     itemData.name +
                     '" /></div><div class="item-slot-amount"><p>(' +
                     itemData.amount +
-                    ") $" +
-                    itemData.price +
+                    ")" +
+                    "("+itemData.price+")៛)"+
                     '</p></div><div class="item-slot-label"><p>' +
                     itemData.label +
                     "</p></div>"
@@ -1445,8 +1445,8 @@ function swap($fromSlot, $toSlot, $fromInv, $toInv, $toAmount) {
                             newDataFrom.name +
                             '" /></div><div class="item-slot-amount"><p>(' +
                             newDataFrom.amount +
-                            ") $" +
-                            newDataFrom.price +
+                            ") " +
+                            "("+newDataFrom.price+")៛" +
                             '</p></div><div class="item-slot-label"><p>' +
                             newDataFrom.label +
                             "</p></div>"
@@ -2019,8 +2019,8 @@ function swap($fromSlot, $toSlot, $fromInv, $toInv, $toAmount) {
                             newDataFrom.name +
                             '" /></div><div class="item-slot-amount"><p>(' +
                             newDataFrom.amount +
-                            ") $" +
-                            newDataFrom.price +
+                            ") " +
+                            "("+newDataFrom.price+")៛" +
                             '</p></div><div class="item-slot-label"><p>' +
                             newDataFrom.label +
                             "</p></div>"
@@ -2478,8 +2478,8 @@ var requiredItemOpen = false;
                                 item.name +
                                 '" /></div><div class="item-slot-amount"><p>(' +
                                 item.amount +
-                                ") $" +
-                                item.price +
+                                ") " +
+                                "("+item.price+")៛" +
                                 "</p></div>" +
                                 ItemLabel
                             );

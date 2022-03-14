@@ -95,8 +95,8 @@ function setupCharInfo(cData) {
         '<div class="character-info-box"><span id="info-label">ភេទ: </span><span class="char-info-js">'+gender+'</span></div>' +
         '<div class="character-info-box"><span id="info-label">សញ្ជាតិ: </span><span class="char-info-js">'+cData.charinfo.nationality+'</span></div>' +
         '<div class="character-info-box"><span id="info-label">ការងារ: </span><span class="char-info-js">'+cData.job.label+'</span></div>' +
-        '<div class="character-info-box"><span id="info-label">លុយសុទ្ធ: </span><span class="char-info-js">&#36; '+cData.money.cash+'</span></div>' +
-        '<div class="character-info-box"><span id="info-label">ធនាគារ: </span><span class="char-info-js">&#36; '+cData.money.bank+'</span></div>' +
+        '<div class="character-info-box"><span id="info-label">លុយសុទ្ធ: </span><span class="char-info-js">'+cData.money.cash+'៛ </span></div>' +
+        '<div class="character-info-box"><span id="info-label">ធនាគារ: </span><span class="char-info-js"> '+cData.money.bank+'៛</span></div>' +
         '<div class="character-info-box"><span id="info-label">លេខទូរស័ព្ទ: </span><span class="char-info-js">'+cData.charinfo.phone+'</span></div>' +
         '<div class="character-info-box"><span id="info-label">លេខគណនី: </span><span class="char-info-js">'+cData.charinfo.account+'</span></div>');
     }
