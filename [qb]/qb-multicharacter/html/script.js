@@ -15,7 +15,7 @@ $(document).ready(function (){
                 $(".welcomescreen").fadeIn(150);
                 qbMultiCharacters.resetAll();
 
-                var originalText = "Retrieving player data";
+                var originalText = "កំពុងទាញយកពត៌មានរបស់អ្នក";
                 var loadingProgress = 0;
                 var loadingDots = 0;
                 $("#loading-text").html(originalText);
@@ -24,15 +24,15 @@ $(document).ready(function (){
                     loadingDots++;
                     loadingProgress++;
                     if (loadingProgress == 3) {
-                        originalText = "Validating player data"
+                        originalText = "ពិនិត្យតួអង្គ"
                         $("#loading-text").html(originalText);
                     }
                     if (loadingProgress == 4) {
-                        originalText = "Retrieving characters"
+                        originalText = "ទាញយកតួអង្គ"
                         $("#loading-text").html(originalText);
                     }
                     if (loadingProgress == 6) {
-                        originalText = "Validating characters"
+                        originalText = "សូមរងចាំ..."
                         $("#loading-text").html(originalText);
                     }
                     if(loadingDots == 4) {
@@ -90,15 +90,15 @@ function setupCharInfo(cData) {
         var gender = "Man"
         if (cData.charinfo.gender == 1) { gender = "Woman" }
         $('.character-info-valid').html(
-        '<div class="character-info-box"><span id="info-label">Name: </span><span class="char-info-js">'+cData.charinfo.firstname+' '+cData.charinfo.lastname+'</span></div>' +
-        '<div class="character-info-box"><span id="info-label">Birth date: </span><span class="char-info-js">'+cData.charinfo.birthdate+'</span></div>' +
-        '<div class="character-info-box"><span id="info-label">Gender: </span><span class="char-info-js">'+gender+'</span></div>' +
-        '<div class="character-info-box"><span id="info-label">Nationality: </span><span class="char-info-js">'+cData.charinfo.nationality+'</span></div>' +
-        '<div class="character-info-box"><span id="info-label">Job: </span><span class="char-info-js">'+cData.job.label+'</span></div>' +
-        '<div class="character-info-box"><span id="info-label">Cash: </span><span class="char-info-js">&#36; '+cData.money.cash+'</span></div>' +
-        '<div class="character-info-box"><span id="info-label">Bank: </span><span class="char-info-js">&#36; '+cData.money.bank+'</span></div>' +
-        '<div class="character-info-box"><span id="info-label">Phone number: </span><span class="char-info-js">'+cData.charinfo.phone+'</span></div>' +
-        '<div class="character-info-box"><span id="info-label">Account number: </span><span class="char-info-js">'+cData.charinfo.account+'</span></div>');
+        '<div class="character-info-box"><span id="info-label">ឈ្មោះ: </span><span class="char-info-js">'+cData.charinfo.firstname+' '+cData.charinfo.lastname+'</span></div>' +
+        '<div class="character-info-box"><span id="info-label">ថ្ងៃ ខែ ឆ្នាំកំណើត: </span><span class="char-info-js">'+cData.charinfo.birthdate+'</span></div>' +
+        '<div class="character-info-box"><span id="info-label">ភេទ: </span><span class="char-info-js">'+gender+'</span></div>' +
+        '<div class="character-info-box"><span id="info-label">សញ្ជាតិ: </span><span class="char-info-js">'+cData.charinfo.nationality+'</span></div>' +
+        '<div class="character-info-box"><span id="info-label">ការងារ: </span><span class="char-info-js">'+cData.job.label+'</span></div>' +
+        '<div class="character-info-box"><span id="info-label">លុយសុទ្ធ: </span><span class="char-info-js">&#36; '+cData.money.cash+'</span></div>' +
+        '<div class="character-info-box"><span id="info-label">ធនាគារ: </span><span class="char-info-js">&#36; '+cData.money.bank+'</span></div>' +
+        '<div class="character-info-box"><span id="info-label">លេខទូរស័ព្ទ: </span><span class="char-info-js">'+cData.charinfo.phone+'</span></div>' +
+        '<div class="character-info-box"><span id="info-label">លេខគណនី: </span><span class="char-info-js">'+cData.charinfo.account+'</span></div>');
     }
 }
 
@@ -140,8 +140,8 @@ $(document).on('click', '.character', function(e) {
         } else {
             $(selectedChar).addClass("char-selected");
             setupCharInfo($(this).data('cData'))
-            $("#play-text").html("Play");
-            $("#delete-text").html("Delete");
+            $("#play-text").html("លេង");
+            $("#delete-text").html("លុប");
             $("#play").css({"display":"block"});
             $("#delete").css({"display":"block"});
             $.post('https://qb-multicharacter/cDataPed', JSON.stringify({
@@ -163,8 +163,8 @@ $(document).on('click', '.character', function(e) {
         } else {
             $(selectedChar).addClass("char-selected");
             setupCharInfo($(this).data('cData'))
-            $("#play-text").html("Play");
-            $("#delete-text").html("Delete");
+            $("#play-text").html("លេង");
+            $("#delete-text").html("លុប");
             $("#play").css({"display":"block"});
             $("#delete").css({"display":"block"});
             $.post('https://qb-multicharacter/cDataPed', JSON.stringify({
@@ -247,21 +247,21 @@ $(document).on('click', '#cancel-delete', function(e){
 });
 
 function setCharactersList() {
-    var htmlResult = '<div class="character-list-header"><p>My Characters</p></div>'
+    var htmlResult = '<div class="character-list-header"><p>តួអង្គខ្ញុំ</p></div>'
     for (let i = 1; i <= NChar; i++) {
-        htmlResult += '<div class="character" id="char-'+ i +'" data-cid=""><span id="slot-name">Empty Slot<span id="cid"></span></span></div>'
+        htmlResult += '<div class="character" id="char-'+ i +'" data-cid=""><span id="slot-name">ប្រអប់ទំនេ<span id="cid"></span></span></div>'
     }
-    htmlResult += '<div class="character-btn" id="play"><p id="play-text">Select a character</p></div><div class="character-btn" id="delete"><p id="delete-text">Select a character</p></div>'
+    htmlResult += '<div class="character-btn" id="play"><p id="play-text">ជ្រើសរើសតួអង្គ</p></div><div class="character-btn" id="delete"><p id="delete-text">ជ្រើសរើសតួអង្គ</p></div>'
     $('.characters-list').html(htmlResult)
 }
 
 function refreshCharacters() {
     var htmlResult = ''
     for (let i = 1; i <= NChar; i++) {
-        htmlResult += '<div class="character" id="char-'+ i +'" data-cid=""><span id="slot-name">Empty Slot<span id="cid"></span></span></div>'
+        htmlResult += '<div class="character" id="char-'+ i +'" data-cid=""><span id="slot-name">ប្រអប់ទំនេ<span id="cid"></span></span></div>'
     }
 
-    htmlResult += '<div class="character-btn" id="play"><p id="play-text">Select a character</p></div><div class="character-btn" id="delete"><p id="delete-text">Select a character</p></div>'
+    htmlResult += '<div class="character-btn" id="play"><p id="play-text">ជ្រើសរើសតួអង្គ</p></div><div class="character-btn" id="delete"><p id="delete-text">ជ្រើសរើសតួអង្គ</p></div>'
     $('.characters-list').html(htmlResult)
     
     setTimeout(function(){
